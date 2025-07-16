@@ -2,9 +2,7 @@
 
 A password cracking tool that supports PDF and ZIP files using dictionary attacks.
 
-## Getting Started
-
-## Project Setup
+## Getting Started With Project Setup
 
 This project uses vcpkg for package management. Make sure you have vcpkg installed and properly configured before proceeding.
 
