@@ -1,4 +1,16 @@
-# Project Setup
+# FileDictCracker
+
+A password cracking tool that supports PDF and ZIP files using dictionary attacks.
+
+## Getting Started
+
+### Clone the Repository
+```bash
+git clone https://github.com/Candyris/FileDictCracker.git
+cd FileDictCracker
+```
+
+## Project Setup
 
 This project uses vcpkg for package management. Make sure you have vcpkg installed and properly configured before proceeding.
 
@@ -13,20 +25,27 @@ This project uses vcpkg for package management. Make sure you have vcpkg install
 ### 1. Install vcpkg
 Install vcpkg on your PC and add its location to your system's PATH environment variable.
 
-### 2. Install Dependencies
+### 2. Clone and Navigate
+Clone the repository and navigate to the project folder:
+```bash
+git clone https://github.com/Candyris/FileDictCracker.git
+cd FileDictCracker
+```
+
+### 3. Install Dependencies
 Navigate to the project folder and run:
 ```bash
 vcpkg install
 ```
 
-### 3. Configure CMake
+### 4. Configure CMake
 Run the following command, replacing `<path_where_vcpkg_installed>` with your actual vcpkg installation path:
 
 ```bash
 cmake --fresh -S . -B build -DCMAKE_TOOLCHAIN_FILE=C:/<path_where_vcpkg_installed>/vcpkg/scripts/buildsystems/vcpkg.cmake -DVCPKG_TARGET_TRIPLET=x64-windows
 ```
 
-### 4. Build the Project
+### 5. Build the Project
 Choose one of the following options:
 
 **Option A: Build with CMake**
@@ -39,8 +58,20 @@ cmake --build build
 2. Set the current project as the startup project
 3. Build and run (Debug/Release mode)
 
-### 5. Run the Application
-After successful build, you can run the executable or use it as needed for your project.
+### 6. Run the Application
+After successful build, you can run the executable:
+
+```bash
+FileDictCracker.exe <password_dictionary> <document>
+```
+
+**Examples:**
+```bash
+FileDictCracker.exe passwords.txt document.pdf
+FileDictCracker.exe wordlist.txt archive.zip
+```
+
+**Supported file types:** PDF (.pdf), ZIP (.zip)
 
 ## Troubleshooting
 
