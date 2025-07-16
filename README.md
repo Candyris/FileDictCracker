@@ -4,12 +4,6 @@ A password cracking tool that supports PDF and ZIP files using dictionary attack
 
 ## Getting Started
 
-### Clone the Repository
-```bash
-git clone https://github.com/Candyris/FileDictCracker.git
-cd FileDictCracker
-```
-
 ## Project Setup
 
 This project uses vcpkg for package management. Make sure you have vcpkg installed and properly configured before proceeding.
