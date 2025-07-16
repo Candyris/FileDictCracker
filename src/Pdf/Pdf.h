@@ -1,14 +1,10 @@
 #pragma once
+#include <string>
+#include <optional>
+#include <memory>
+#include <vector>
 namespace Pdf
 {
     bool PasswordCheck(const char* path, const char* password);
-};
-class ScopedStderrSuppressor {
-public:
-    ScopedStderrSuppressor();
-
-    ~ScopedStderrSuppressor();
-
-private:
-    int saved_fd = -1;
+    std::optional<std::string> CrackPassword(const std::string& documentPath, std::unique_ptr<std::vector<std::string>>& dictionaryPasswords);
 };
