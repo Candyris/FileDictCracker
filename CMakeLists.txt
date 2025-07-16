@@ -10,17 +10,19 @@ link_directories(${CMAKE_SOURCE_DIR}/vcpkg_installed/x64-windows/lib)
 
 # Find libraries using vcpkg integration
 find_package(libzip CONFIG REQUIRED)
-find_package(Poppler CONFIG REQUIRED)
 
 # Add source files
 add_executable(PDFCracker
     src/main.cpp
     src/Pdf/Pdf.cpp
     src/Zip/Zip.cpp
+    
+    src/Pdf/Pdf.h
+    src/Zip/Zip.h
 )
 
 # Link libraries
 target_link_libraries(PDFCracker PRIVATE
-    Poppler::poppler-cpp
+    poppler-cpp
     libzip::zip
 )
