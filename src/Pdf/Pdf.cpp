@@ -49,7 +49,6 @@ bool Pdf::PasswordCheck(const char* path, const char* password)
 
 std::optional<std::string> Pdf::CrackPassword(const std::string& documentPath, std::unique_ptr<std::vector<std::string>>& dictionaryPasswords)
 {
-    std::cout << "documentPath" << documentPath << std::endl;
     const int numThreads = std::thread::hardware_concurrency();
     const int total = dictionaryPasswords->size();
     const int chunkSize = (total + numThreads - 1) / numThreads;
@@ -73,8 +72,8 @@ std::optional<std::string> Pdf::CrackPassword(const std::string& documentPath, s
                         if (foundPassword.load()) return;
                         
                         const std::string& password = (*dictionaryPasswords)[j];
-                        std::cout << "Thread ID: " << std::this_thread::get_id() << std::endl;
-                        std::cout << password << std::endl;
+                        // std::cout << "Thread ID: " << std::this_thread::get_id() << std::endl;
+                        // std::cout << password << std::endl;
                         if (Pdf::PasswordCheck(documentPath.c_str(), password.c_str()))
                         {
                             {
